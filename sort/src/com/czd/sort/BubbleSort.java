@@ -72,7 +72,7 @@ public class BubbleSort {
     private static void upperBubbleSort2(int[] numbers){
         int n=numbers.length;
         int count=0;
-        //记录已经排序好的下标值，下次直接从这个小标开始比较
+        //记录已经排序好的下标值，下次直接从这个下标开始比较
         int k=n-1;
         for (int i=0;i<n-1;i++){
             boolean flag=false;
