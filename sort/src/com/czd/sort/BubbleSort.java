@@ -8,7 +8,7 @@ package com.czd.sort;
  */
 public class BubbleSort {
     /**
-     * 冒泡排序 每次选出最大的放到最后
+     * 冒泡排序 每次选出最大的放到最后 相邻位置比较
      * 一共n-1轮 每轮需要n-i-1次比较与交换
      */
     public static void main(String[] args) {

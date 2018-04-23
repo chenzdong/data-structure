@@ -70,7 +70,7 @@ public class ChoseSort {
         int n=numbers.length;
         int count=0;
         for(int i=0;i<n-1;i++){
-            //保证最小值 每轮该位置至于最小值交换
+            //保证最小值 每轮该位置与最小值交换
             int min=i;
             for (int j = i+1; j <n ; j++) {
                 count++;
