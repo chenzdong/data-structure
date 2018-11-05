@@ -1,8 +1,6 @@
-package com.czd.sort;
+package com.czd.collection;
 
-import java.util.Queue;
 import java.util.Stack;
-import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * 通过两个栈构建一个queue
@@ -13,7 +11,6 @@ import java.util.concurrent.ArrayBlockingQueue;
 public class QueueByStack {
     private Stack<Integer> stack1=new Stack<>();
     private Stack<Integer> stack2=new Stack<>();
-
     //入栈
     public void enQueue(int element) {
         stack1.push(element);
