@@ -12,8 +12,9 @@ import java.util.LinkedHashMap;
 public class LRUCache {
     private Node head;
     private Node end;
-    //缓存存储最大数量
+    /** 缓存存储最大数量 **/
     private int max;
+    /** 起存储作用 **/
     private HashMap<String,Node> hashMap;
 
     public LRUCache(int max) {
