@@ -100,7 +100,7 @@ public class BubbleSort {
         System.out.println("count is "+count);
     }
     /**
-     * 鸡尾酒排序 （奇数轮从左到右 偶数轮从右到左 适用于基本有须的数组）
+     * 鸡尾酒排序 （奇数轮从左到右 偶数轮从右到左 适用于基本有序的数组）
      */
     public static void cockTailSort(int[] numbers) {
         int count = 0;
