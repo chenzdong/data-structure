@@ -18,16 +18,17 @@ public class BubbleSort {
 //        upperBubbleSort2(numbers);
         cockTailSort(numbers);
     }
+
    /**
     * 普通的冒泡排序
     */
     private static void commonBubbleSort(int[] numbers) {
         int n = numbers.length;
         int count = 0;
-        for (int i=0;i<n-1;i++) {
+        for (int i = 0; i < n-1; i++) {
             for (int j = 0; j <n-1-i; j++) {
                 count++;
-                if (numbers[j]>numbers[j+1]) {
+                if (numbers[j] > numbers[j+1]) {
                     int temp = numbers[j];
                     numbers[j] = numbers[j+1];
                     numbers[j+1] = temp;
@@ -45,12 +46,12 @@ public class BubbleSort {
      */
     private static void upperBubbleSort1(int[] numbers){
         int n=numbers.length;
-        int count=0;
-        for (int i=0;i<n-1;i++) {
+        int count = 0;
+        for (int i = 0; i < n-1; i++) {
             boolean flag = false;
             for (int j = 0; j <n-1-i; j++) {
                 count++;
-                if (numbers[j]>numbers[j+1]) {
+                if (numbers[j] > numbers[j+1]) {
                     int temp = numbers[j];
                     numbers[j] = numbers[j+1];
                     numbers[j+1] = temp;
@@ -75,10 +76,10 @@ public class BubbleSort {
         int count = 0;
         //记录已经排序好的下标值，下次直接从这个下标开始比较
         int k = n-1;
-        for (int i=0;i<n-1;i++) {
+        for (int i = 0; i < n-1; i++) {
             boolean flag = false;
             int min = 0;
-            for (int j = 0; j <k; j++) {
+            for (int j = 0; j < k; j++) {
                 count++;
                 if (numbers[j] > numbers[j+1]) {
                     int temp = numbers[j];

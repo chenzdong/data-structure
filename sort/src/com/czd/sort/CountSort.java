@@ -33,9 +33,9 @@ public class CountSort {
         //遍历计数数组 输出排序后的数组
         int index=0;
         int[] result = new int[temp.length];
-        for (int i = 0; i <countArray.length ; i++) {
+        for (int i = 0; i < countArray.length ; i++) {
             for (int j = 0; j <countArray[i] ; j++) {
-                result[index++]=i+min;
+                result[index++] = i + min;
             }
         }
         return result;
@@ -73,7 +73,7 @@ public class CountSort {
         for (int i = arrays.length-1 ; i >=0 ; i--) {
             //原数组在计数数组对应位置
             int sign = arrays[i]-min;
-            result[countArray[sign]-1]= arrays[i];
+            result[countArray[sign]-1] = arrays[i];
             countArray[sign]--;
         }
         return result;

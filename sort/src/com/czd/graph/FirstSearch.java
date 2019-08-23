@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 /**
  * 图的两种遍历算法
- * i.  DFS(Depth First Search)   深度优先遍历 回溯（基于栈或递归） 二叉树的前序 中序 后序 遍历
+ * i.  DFS(Depth First Search)   深度优先遍历 回溯（基于栈或递归）二叉树的前序 中序 后序 遍历
  * ii. BFS(Breadth First Search) 广度优先遍历 重放（基于队列）二叉树的层序遍历
  *
  * @author: czd

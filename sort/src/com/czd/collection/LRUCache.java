@@ -25,7 +25,7 @@ public class LRUCache {
     public String get(String key) {
         Node node = hashMap.get(key);
         if (node == null) {
-            return  null;
+            return null;
         }
         //更新Node
         refreshNode(node);
@@ -37,7 +37,7 @@ public class LRUCache {
         if (node == null) {
             //key不存在则插入
             if (hashMap.size() >= max) {
-                String oldkey =removeNode(head);
+                String oldkey = removeNode(head);
                 hashMap.remove(oldkey);
             }
             node = new Node(key,value);

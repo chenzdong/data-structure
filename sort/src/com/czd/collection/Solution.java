@@ -11,15 +11,15 @@ import java.util.List;
  */
 public class Solution {
     public static void deleteNode(ListNode node) {
-        node.val=node.next.val;
-        node.next=node.next.next;
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 
     public static void main(String[] args) {
-        ListNode node=new ListNode(4);
-        node.next=new ListNode(5);
-        node.next=new ListNode(1);
-        node.next=new ListNode(9);
+        ListNode node = new ListNode(4);
+        node.next = new ListNode(5);
+        node.next = new ListNode(1);
+        node.next = new ListNode(9);
         deleteNode(node);
         System.out.println(node.val);
     }

@@ -1,5 +1,6 @@
 package com.czd.bloomfilter.demo;
 
+import com.google.common.cache.CacheBuilder;
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnel;
 import com.google.common.hash.PrimitiveSink;
@@ -26,7 +27,7 @@ public class BloomByGuava {
         for (int i = 0; i < 1000; i++) {
             bloom.put(String.valueOf(i));
         }
-        boolean mightContain = bloom.mightContain("150000");
+        boolean mightContain = bloom.mightContain("1500");
         System.out.println(mightContain);
     }
 

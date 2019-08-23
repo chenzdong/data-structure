@@ -9,8 +9,8 @@ import java.util.Stack;
  * @create: 2018/10/22 13:41
  */
 public class QueueByStack {
-    private Stack<Integer> stack1=new Stack<>();
-    private Stack<Integer> stack2=new Stack<>();
+    private Stack<Integer> stack1 = new Stack<>();
+    private Stack<Integer> stack2 = new Stack<>();
     //入栈
     public void enQueue(int element) {
         stack1.push(element);
@@ -34,7 +34,7 @@ public class QueueByStack {
         }
     }
     public static void main(String[] args) {
-        QueueByStack queueByStack=new QueueByStack();
+        QueueByStack queueByStack = new QueueByStack();
         queueByStack.enQueue(1);
         queueByStack.enQueue(2);
         queueByStack.enQueue(3);
