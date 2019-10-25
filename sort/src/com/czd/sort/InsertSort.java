@@ -2,7 +2,9 @@ package com.czd.sort;
 
 /**
  * 插入排序
- *
+ * 最好 O(n) 最坏O(n2) 平均O(n2)
+ * 稳定排序
+ * 原地排序
  * @author: czd
  * @create: 2018/4/23 10:11
  */
@@ -14,7 +16,30 @@ public class InsertSort {
      */
     public static void main(String[] args) {
         int[] numbers={1,5,87,69,75,2,7,46,6};
-        commonInsertSort1(numbers);
+        InsertSort(numbers);
+    }
+    private static void InsertSort(int[] numbers) {
+        int count = numbers.length;
+        if (count <= 1) {
+            return;
+        }
+        // 第n轮将第n个位置的值插入到之前排序好的n-1区间中
+        for (int i = 1; i < count; i++) {
+            int value = numbers[i];
+            int j = i-1;
+            for (; j > 0; j--) {
+                if (numbers[j] > value) {
+                    numbers[j+1] = numbers[j];
+                } else {
+                    break;
+                }
+            }
+            numbers[j+1] = value;
+
+        }
+        for (int number : numbers) {
+            System.out.println(number+",");
+        }
     }
     private static void commonInsertSort(int[] numbers){
         int size=numbers.length;

@@ -2,7 +2,9 @@ package com.czd.sort;
 
 /**
  * 冒泡排序
- *
+ * 最好 O(n) 最坏O(n2) 平均O(n2)
+ * 稳定排序
+ * 原地排序
  * @author: czd
  * @create: 2018/4/20 9:46
  */
@@ -18,7 +20,6 @@ public class BubbleSort {
 //        upperBubbleSort2(numbers);
         cockTailSort(numbers);
     }
-
    /**
     * 普通的冒泡排序
     */
