@@ -15,13 +15,13 @@ public class ChoseSort {
      */
     public static void main(String[] args) {
         int[] number={49,38,65,76,13,27,10,8,97};
-        ChoseSort(number);
+        choseSort(number);
     }
-    /**
-     * 优化选择排序 （每轮确定最小值位置 与之交换 时间复杂度不变）
+     /**
+     * 选择排序 （每轮确定最小值位置 与之交换 时间复杂度不变）
      * @param numbers
      */
-    private  static  void ChoseSort(int[] numbers){
+    private  static  void choseSort(int[] numbers){
         int n=numbers.length;
         int count=0;
         for(int i=0;i<n-1;i++){

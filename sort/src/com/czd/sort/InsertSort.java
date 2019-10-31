@@ -16,9 +16,9 @@ public class InsertSort {
      */
     public static void main(String[] args) {
         int[] numbers={1,5,87,69,75,2,7,46,6};
-        InsertSort(numbers);
+        insertSort(numbers);
     }
-    private static void InsertSort(int[] numbers) {
+    private static void insertSort(int[] numbers) {
         int count = numbers.length;
         if (count <= 1) {
             return;
