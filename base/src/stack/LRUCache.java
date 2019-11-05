@@ -1,7 +1,6 @@
-package com.czd.collection;
+package stack;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 /**
  * LRU(Least Recently Used )最近最少使用缓存

@@ -5,12 +5,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 快速排序
- *
+ * 最好、平均时间复杂度O(nlogn) 、最坏时间复杂度O(n2)
+ * 稳定排序：N
+ * 原地排序：Y
+ * 递推公式：quick_sort(p…r) = quick_sort(p…q-1) + quick_sort(q+1… r)
+ * 终止条件：p >= r
  * @author: czd
  * @create: 2018/10/29 15:50
  */
 public class QuickSort {
     private  static AtomicInteger count = new AtomicInteger();
+
     public static void main(String[] args) {
         int[] arr = new int[]{4,7,6,5,3,2,8,1};
         quickSort(arr,0,arr.length-1);
@@ -42,7 +47,7 @@ public class QuickSort {
      * @param endIndex
      * @return 基准元素的位置
      */
-    private static int partition(int[] arr, int startIndex, int endIndex) {
+    private static int partition1(int[] arr, int startIndex, int endIndex) {
         //基准元素
         int pivot = arr[startIndex];
         //左指针
@@ -76,6 +81,22 @@ public class QuickSort {
             }
         }
         arr[index] = pivot;
+        return index;
+    }
+    private static int partition(int[] arr, int startIndex, int endIndex) {
+        int pivot = arr[startIndex];
+        int index = endIndex;
+        for (int i = endIndex; i >= startIndex ; i--) {
+            if (arr[i] > pivot) {
+                // swap arr[i] and arr[index]
+                int temp = arr[i];
+                arr[i] = arr[index];
+                arr[index--] = temp;
+            }
+        }
+        int temp = arr[index];
+        arr[index] = arr[startIndex];
+        arr[startIndex] = temp;
         return index;
     }
 }

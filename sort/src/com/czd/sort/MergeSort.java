@@ -4,7 +4,7 @@ package com.czd.sort;
  * 归并排序
  * 最好、平均、最坏时间复杂度O(nlogn)
  * 稳定排序：Y
- * 原地排序：N
+ * 原地排序：N(空间复杂度O(n))
  * 递推公式：merge_sort(p…r) = merge(merge_sort(p…q), merge_sort(q+1…r))
  * 终止条件：p >= r
  * @author: czd
