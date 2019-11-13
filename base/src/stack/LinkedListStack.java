@@ -27,7 +27,7 @@ public class LinkedListStack {
         top = top.next;
         return value;
     }
-    public void pringAll() {
+    public void printAll() {
         Node p = top;
         while (p != null) {
             System.out.println(p.getData());
@@ -55,6 +55,6 @@ public class LinkedListStack {
         System.out.println(stack.pop());
         stack.push("xixi");
         System.out.println(stack.pop());
-        stack.pringAll();
+        stack.printAll();
     }
 }
