@@ -14,8 +14,15 @@ import java.util.LinkedList;
 public class BucketSort {
     /**
      * 空间O（n+m） n 元素数量 m 桶数量
-     * 时间O(n+m+n(logn-logm)）
+     * 时间O(m * k * logk)，因为 k=n/m,O(n*log(n/m))
      */
+
+    public static void main(String[] args) {
+        double[] array = new double[]{4.12,6.421,0.0023,3.0,2.123,8.122,4.12,10.09,10000};
+        double[] result = bucketSort(array);
+        System.out.println(Arrays.toString(result));
+    }
+
     public static double[] bucketSort(double[] arrays) {
         //先取出最大值
         if (arrays.length == 0) {
@@ -31,11 +38,11 @@ public class BucketSort {
                 min = arrays[i];
             }
         }
-        double d = max-min;
+        double d = max - min;
         //初始化桶
         int bucketNum = arrays.length;
         ArrayList<LinkedList<Double>> bucketList = new ArrayList<>();
-        for (int i = 0; i <bucketNum ; i++) {
+        for (int i = 0; i < bucketNum ; i++) {
             bucketList.add(new LinkedList<Double>());
         }
         //将元素存入相应的桶中
@@ -46,7 +53,7 @@ public class BucketSort {
         }
         //桶中重新排序
         for (int i = 0; i <bucketNum ; i++) {
-            //O（nlogn）
+            //O（nlogn）归并排序
             Collections.sort(bucketList.get(i));
         }
         //输出结果数组
@@ -61,9 +68,5 @@ public class BucketSort {
         return  result;
     }
 
-    public static void main(String[] args) {
-        double[] array = new double[]{4.12,6.421,0.0023,3.0,2.123,8.122,4.12,10.09,10000};
-        double[] result = bucketSort(array);
-        System.out.println(Arrays.toString(result));
-    }
+
 }

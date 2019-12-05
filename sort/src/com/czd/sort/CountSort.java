@@ -9,10 +9,16 @@ import java.util.Arrays;
  * @create: 2018/10/22 13:59
  */
 public class CountSort {
+    public static void main(String[] args) {
+        int[] array = new int[]{94,95,91,96,98,99,90,93,91,92};
+        int[] result = countSort(array);
+        System.out.println(Arrays.toString(result));
+    }
+
     //计数排序 只适用于int,这个排序空间浪费较大，下一步应该从min-max建立数组
     public static int[] countSort(int[] temp) {
         //先取出最大值
-        if (temp.length == 0) {
+        if (temp.length <= 1) {
             return temp;
         }
         int max=temp[0];
@@ -78,11 +84,7 @@ public class CountSort {
         }
         return result;
     }
-    public static void main(String[] args) {
-        int[] array = new int[]{94,95,91,96,98,99,90,93,91,92};
-        int[] result = countSortUpper(array);
-        System.out.println(Arrays.toString(result));
-    }
+
 
 
 }
