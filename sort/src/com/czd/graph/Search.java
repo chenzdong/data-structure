@@ -1,7 +1,6 @@
 package com.czd.graph;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -12,6 +11,9 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @create: 2019-12-04 11:05
  */
 public class Search {
+
+    // 全局变量记录是否找到终止节点
+    boolean found = false;
     /**
      * 从s-->t的广度搜索算法
      * @param s 初始顶点
@@ -57,12 +59,59 @@ public class Search {
         }
     }
 
+    /**
+     * 从s-->t深度优先搜索
+     * @param graph
+     * @param s
+     * @param t
+     * 空间复杂度O(V)
+     * 时间复杂度O(V+E) 因为 E>V-1 -->O(E)
+     */
+    public void dfs(Graph graph, int s, int t) {
+        found = false;
+        LinkedList<Integer>[] adj = graph.getAdj();
+        // 该数组记录访问过的节点
+        boolean[] visited = new boolean[graph.getV()];
+        // 记录前置节点 便于打印路径
+        int[] prev = new int[graph.getV()];
+        for (int i = 0; i < prev.length; i++) {
+            prev[i] = -1;
+        }
+        recurDfs(adj, s, t, visited, prev);
+        print(prev, s, t);
+
+    }
+
+    private void recurDfs(LinkedList<Integer>[] adj, int w, int t, boolean[] visited, int[] prev) {
+        if (found == true) {
+            return;
+        }
+        visited[w] = true;
+        if (w == t) {
+            found = true;
+            return;
+        }
+        for (int i = 0; i < adj[w].size(); i++) {
+            if (found == true) {
+                break;
+            }
+            int q = adj[w].get(i);
+            if (!visited[q]) {
+                prev[q] = w;
+                recurDfs(adj, q, t, visited, prev);
+            }
+        }
+    }
+
+
     private void print(int[] prev, int s, int t) {
         if (prev[t] != -1 && t != s) {
             print(prev, s, prev[t]);
         }
         System.out.println(t + "");
     }
+
+
 
     public static void main(String[] args) {
         Graph graph = new Graph(8);
@@ -77,6 +126,7 @@ public class Search {
         graph.addEdge(5, 7);
         graph.addEdge(6, 7);
         Search search = new Search();
-        search.bfs(graph,7, 4);
+//        search.bfs(graph,7, 4);
+        search.dfs(graph,1, 4);
     }
 }
