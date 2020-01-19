@@ -24,4 +24,7 @@
     1. Array
     2. Stack
     3. queue
+- stringMatching
+    - BM
+    - KMP
        

@@ -27,7 +27,7 @@ public class FirstSearch {
         private LinkedList<Integer>[] adj;
         Graph(int size) {
             this.size = size;
-            // 初始化顶点和邻接矩阵
+            // 初始化顶点和邻接表
             vertexes = new Vertex[size];
             adj = new LinkedList[size];
             for (int i = 0; i < size; i++) {
