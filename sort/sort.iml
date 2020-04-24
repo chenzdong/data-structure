@@ -15,7 +15,7 @@
         <JAVADOC />
         <SOURCES>
           <root url="file://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.16.22" />
-        </SOURCES>s
+        </SOURCES>
         <jarDirectory url="file://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.16.22" recursive="false" />
         <jarDirectory url="file://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.16.22" recursive="false" type="SOURCES" />
       </library>
