@@ -1,4 +1,4 @@
-package com.czd.collection;
+package collection;
 
 /**
  * 交换两个变量的值

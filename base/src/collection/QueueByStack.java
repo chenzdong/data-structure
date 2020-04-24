@@ -1,4 +1,4 @@
-package com.czd.collection;
+package collection;
 
 import java.util.Stack;
 
