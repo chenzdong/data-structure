@@ -1,6 +1,5 @@
 package com.czd.bloomfilter.demo;
 
-import com.google.common.cache.CacheBuilder;
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnel;
 import com.google.common.hash.PrimitiveSink;

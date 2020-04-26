@@ -38,14 +38,15 @@ public class FirstSearch {
 
         /**
          * 深度优先
-         * @param graph
-         * @param start
-         * @param visited
+         * 递归
+         * @param graph 图
+         * @param position 当前节点
+         * @param visited 标记是否访问
          */
-        public static void dfs(Graph graph, int start, boolean[] visited) {
-            System.out.println(graph.vertexes[start].data);
-            visited[start] = true;
-            for (int index : graph.adj[start]) {
+        public static void dfs(Graph graph, int position, boolean[] visited) {
+            System.out.println(graph.vertexes[position].data);
+            visited[position] = true;
+            for (Integer index : graph.adj[position]) {
                 if (!visited[index]) {
                     dfs(graph, index, visited);
                 }
@@ -54,13 +55,14 @@ public class FirstSearch {
 
         /**
          * 广度优先
-         * @param graph
-         * @param start
-         * @param visited
-         * @param queue
+         * 使用队列
+         * @param graph 图
+         * @param position 当前节点
+         * @param visited 已访问过的几点
+         * @param queue 队列
          */
-        public static void bfs(Graph graph, int start, boolean[] visited, LinkedList<Integer> queue) {
-            queue.offer(start);
+        public static void bfs(Graph graph, int position, boolean[] visited, LinkedList<Integer> queue) {
+            queue.offer(position);
             while (!queue.isEmpty()) {
                 int front = queue.poll();
                 if (visited[front]) {

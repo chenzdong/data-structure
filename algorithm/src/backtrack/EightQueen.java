@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class EightQueen {
     /**
-     * 存储结果 result[i][j]代表第i行反正第j个位置
+     * 存储结果 result[i][j]代表第i行放在第j个位置
       */
     int[] result = new int[8];
     public  static AtomicInteger count = new AtomicInteger();
