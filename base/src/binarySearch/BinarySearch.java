@@ -16,16 +16,29 @@ public class BinarySearch {
      * @return 值对应的位置
      */
     public int bsearch(int[] a, int n ,int value) {
-        int low = 0;
-        int high = n - 1;
-        while (low <= high) {
-            int mid = low + (high - low)/2;
-            if (a[mid] == value) {
-                return mid;
-            } else if(a[mid] < value) {
-                low = mid + 1;
+//        int low = 0;
+//        int high = n - 1;
+//        while (low <= high) {
+//            int mid = low + (high - low)/2;
+//            if (a[mid] == value) {
+//                return mid;
+//            } else if(a[mid] < value) {
+//                low = mid + 1;
+//            } else {
+//                high = mid - 1;
+//            }
+//        }
+//        return -1;
+        int start = 0;
+        int end = n - 1;
+        while (start <= end) {
+            int middle = start + ((end - start) >> 1);
+            if (a[middle] == value) {
+                return middle;
+            } else if (a[middle] < value) {
+                start = middle + 1;
             } else {
-                high = mid - 1;
+                end = middle - 1;
             }
         }
         return -1;
@@ -43,17 +56,17 @@ public class BinarySearch {
     }
 
     private int bsearchInternally(int[] a, int low, int high, int value) {
-        if (low < high) {
+        if (low > high) {
             return -1;
         }
         int mid = low + ((high - low) >> 1);
         if (a[mid] == value) {
             return mid;
         } else if (a[mid] < value) {
-            return bsearchInternally(a, mid+1, high, value);
+            return bsearchInternally(a, mid++, high, value);
         } else {
-            return bsearchInternally(a, low, mid-1, value);
+            return bsearchInternally(a, low, mid--, value);
         }
-
     }
+
 }
