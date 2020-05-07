@@ -16,7 +16,25 @@ public class InsertSort {
      */
     public static void main(String[] args) {
         int[] numbers={1,5,87,69,75,2,7,46,6};
-        insertSort(numbers);
+        shellSort(numbers);
+    }
+    private static void commonInsertSort(int[] numbers){
+        int size=numbers.length;
+        int count=0;
+        for (int i = 0; i <size-1 ; i++) {
+            int j= i + 1;
+            while(j > 0 && numbers[j]<numbers[j-1]){
+                count++;
+                int temp=numbers[j-1];
+                numbers[j-1]=numbers[j];
+                numbers[j]=temp;
+                j--;
+            }
+        }
+        for (int i = 0; i <size; i++) {
+            System.out.println(numbers[i]);
+        }
+        System.out.println("count is " + count);
     }
     private static void insertSort(int[] numbers) {
         int count = numbers.length;
@@ -41,24 +59,6 @@ public class InsertSort {
             System.out.println(number+",");
         }
     }
-    private static void commonInsertSort(int[] numbers){
-        int size=numbers.length;
-        int count=0;
-        for (int i = 0; i <size-1 ; i++) {
-            int j=i+1;
-            while(j>0 && numbers[j]<numbers[j-1]){
-                count++;
-                int temp=numbers[j-1];
-                numbers[j-1]=numbers[j];
-                numbers[j]=temp;
-                j--;
-            }
-        }
-        for (int i = 0; i <size; i++) {
-            System.out.println(numbers[i]);
-        }
-        System.out.println("count is " + count);
-    }
     private static  void commonInsertSort1(int[] numbers){
         int size=numbers.length;
         int count=0;
@@ -77,5 +77,23 @@ public class InsertSort {
             System.out.println(numbers[i]);
         }
         System.out.println("count is " + count);
+    }
+    private static void shellSort(int[] nums) {
+        int d = nums.length;
+        while (d > 1) {
+            d = d/2;
+            for (int i = 0; i < nums.length - d ; i++) {
+                int j = i + d;
+                while (j > 0 && nums[j-d] > nums[j]) {
+                    int tmp = nums[j];
+                    nums[j] = nums[j-d];
+                    nums[j-d] = tmp;
+                }
+
+            }
+        }
+        for (int i = 0; i <nums.length; i++) {
+            System.out.println(nums[i]);
+        }
     }
 }
