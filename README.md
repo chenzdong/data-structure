@@ -34,4 +34,6 @@
         - Backpack 背包问题
         - EightQueen 八皇后问题
         - Pattern 正则匹配
-       
+- tree
+    - BinarySearchTree 二叉查找树
+    - heap     

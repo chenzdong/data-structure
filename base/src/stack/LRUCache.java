@@ -77,15 +77,15 @@ public class LRUCache {
         }
         return node.key;
     }
-//    public String get(String key) {
-//        Node node = hashMap.get(key);
-//        if (node == null) {
-//            return null;
-//        }
-//        //更新Node
-//        refreshNode(node);
-//        return node.value;
-//    }
+    public String get(String key) {
+        Node node = hashMap.get(key);
+        if (node == null) {
+            return null;
+        }
+        //更新Node
+        refreshNode(node);
+        return node.value;
+    }
 //
 //    public void put(String key,String value) {
 //        Node node = hashMap.get(key);
