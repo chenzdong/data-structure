@@ -40,18 +40,33 @@ public class LRULinked {
     public void put(String key, String value) {
         Node n = map.get(key);
         if (n == null) {
+            // 满了
             if (map.size() == capacity) {
                 map.remove(tail.key);
                 removeNode(tail);
             }
             Node node = new Node(key, value);
-            addNode(node);
+            addNode(n);
             map.put(key, node);
         } else {
             n.value = value;
             removeNode(n);
             addNode(n);
         }
+//        Node n = map.get(key);
+//        if (n == null) {
+//            if (map.size() == capacity) {
+//                map.remove(tail.key);
+//                removeNode(tail);
+//            }
+//            Node node = new Node(key, value);
+//            addNode(node);
+//            map.put(key, node);
+//        } else {
+//            n.value = value;
+//            removeNode(n);
+//            addNode(n);
+//        }
     }
     /**
      * 将节点添加到头部
@@ -64,13 +79,13 @@ public class LRULinked {
             return;
         }
         if (head != null) {
-            node.next = head;
+            node.next =head;
             head.pre = node;
         }
         if (tail == null) {
             tail = node;
         }
-        head = tail;
+        head = node;
     }
 
     /**
@@ -93,7 +108,6 @@ public class LRULinked {
             node.pre.next = node.next;
             node.next.pre = node.pre;
         }
-
         return node.key;
     }
     public static void main(String[] args) {
